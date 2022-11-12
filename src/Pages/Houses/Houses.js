@@ -6,7 +6,7 @@ const Houses = () => {
     const [location, setLocation] = useState("");
     const [price, setPrice] = useState(0);
     const [type, setType] = useState("");
-    console.log(location)
+    console.log(price)
     useEffect(() => {
         fetch("house.json")
             .then(res => res.json())
@@ -14,11 +14,25 @@ const Houses = () => {
                 if (location) {
                     setHouses(data.filter(d => d.address === location));
                 }
+                else if (price) {
+                    if (Number(price) === 1) {
+                        setHouses(data.filter(d => d.rent > 1000));
+                    }
+                    else if (Number(price) === 2) {
+                        setHouses(data.filter(d => (d.rent > 1000 && d.rent < 2000)))
+                    }
+                    else if (Number(price) === 3) {
+                        setHouses(data.filter(d => (d.rent > 2000 && d.rent < 3000)))
+                    }
+                    else if (Number(price) === 4) {
+                        setHouses(data.filter(d => d.rent > 3000))
+                    }
+                }
                 else {
                     setHouses(data)
                 }
             })
-    }, [location])
+    }, [location, price])
     return (
         <div>
             {/* Search Section */}
@@ -39,11 +53,11 @@ const Houses = () => {
                     <div class="card  bg-base-100 shadow-xl border">
                         <div class="card-body">
                             <h2 class="card-title">Price</h2>
-                            <select class="select select-bordered w-full max-w-xs">
-                                <option>&gt;1000</option>
-                                <option>&gt;1000, &lt;2000</option>
-                                <option>&gt;2000, &lt;3000</option>
-                                <option>&gt;3000</option>
+                            <select onChange={e => setPrice(e.target.value)} class="select select-bordered w-full max-w-xs">
+                                <option value={1}>&gt;1000</option>
+                                <option value={2}>&gt;1000, &lt;2000</option>
+                                <option value={3}>&gt;2000, &lt;3000</option>
+                                <option value={4}>&gt;3000</option>
                             </select>
                         </div>
                     </div>
@@ -63,7 +77,7 @@ const Houses = () => {
             {/* All Properties */}
             <div className='md:grid grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
-                    houses.map(house => <House
+                    houses?.map(house => <House
                         key={house.id}
                         house={house}
                     />)
