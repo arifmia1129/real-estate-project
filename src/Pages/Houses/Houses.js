@@ -3,12 +3,22 @@ import House from '../House/House';
 
 const Houses = () => {
     const [houses, setHouses] = useState([]);
-
+    const [location, setLocation] = useState("");
+    const [price, setPrice] = useState(0);
+    const [type, setType] = useState("");
+    console.log(location)
     useEffect(() => {
         fetch("house.json")
             .then(res => res.json())
-            .then(data => setHouses(data))
-    }, [])
+            .then(data => {
+                if (location) {
+                    setHouses(data.filter(d => d.address === location));
+                }
+                else {
+                    setHouses(data)
+                }
+            })
+    }, [location])
     return (
         <div>
             {/* Search Section */}
@@ -18,11 +28,11 @@ const Houses = () => {
                     <div class="card  bg-base-100 shadow-xl border">
                         <div class="card-body">
                             <h2 class="card-title">Location</h2>
-                            <select class="select select-bordered w-full max-w-xs">
-                                <option>Gaibandha, Bangladesh</option>
-                                <option>Gobindaganj, Bangladesh</option>
-                                <option>Bogra, Bangladesh</option>
-                                <option>Dhaka, Bangladesh</option>
+                            <select onChange={e => setLocation(e.target.value)} class="select select-bordered w-full max-w-xs">
+                                <option value="Gaibandha, Bangladesh">Gaibandha, Bangladesh</option>
+                                <option value="Gobindaganj, Bangladesh">Gobindaganj, Bangladesh</option>
+                                <option value="Bogra, Bangladesh">Bogra, Bangladesh</option>
+                                <option value="Dhaka, Bangladesh">Dhaka, Bangladesh</option>
                             </select>
                         </div>
                     </div>
