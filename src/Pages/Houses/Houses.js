@@ -14,7 +14,7 @@ const Houses = () => {
             {/* Search Section */}
             <div className='my-10'>
                 <h1 className='text-3xl font-bold'>Search properties to rent</h1>
-                <div className='grid grid-cols-3 gap-10 mt-5'>
+                <div className='md:grid grid-cols-2 lg:grid-cols-3 gap-10 mt-5'>
                     <div class="card  bg-base-100 shadow-xl border">
                         <div class="card-body">
                             <h2 class="card-title">Location</h2>
@@ -51,7 +51,14 @@ const Houses = () => {
             </div>
 
             {/* All Properties */}
-
+            <div className='md:grid grid-cols-2 lg:grid-cols-3 gap-10'>
+                {
+                    houses.map(house => <House
+                        key={house.id}
+                        house={house}
+                    />)
+                }
+            </div>
         </div>
     );
 };
