@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Palm Harbon",
+        "rent": 1500,
+        "image": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992&q=80",
+        "address": "Gaibandha, Bangladesh",
+        "bed": 3,
+        "bathroom": 2,
+        "type": "houses"
+    },
+    {
+        "id": 2,
+        "name": "Peace House",
+        "rent": 2000,
+        "image": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "address": "Gobindaganj, Bangladesh",
+        "bed": 4,
+        "bathroom": 2,
+        "type": "floor"
+    },
+    {
+        "id": 3,
+        "name": "Green House",
+        "rent": 1800,
+        "image": "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "address": "Bogra, Bangladesh",
+        "bed": 4,
+        "bathroom": 3,
+        "type": "houses"
+    },
+    {
+        "id": 4,
+        "name": "Family House",
+        "rent": 2500,
+        "image": "https://images.unsplash.com/photo-1568242629525-62b0c3d77fb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        "address": "Bogra, Bangladesh",
+        "bed": 6,
+        "bathroom": 4,
+        "type": "flat"
+    },
+    {
+        "id": 5,
+        "name": "House of Small Family",
+        "rent": 3000,
+        "image": "https://images.unsplash.com/photo-1571055107559-3e67626fa8be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80",
+        "address": "Dhaka, Bangladesh",
+        "bed": 2,
+        "bathroom": 2,
+        "type": "house"
+    },
+    {
+        "id": 6,
+        "name": "Beauty Home",
+        "rent": 3200,
+        "image": "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "address": "Dhaka, Bangladesh",
+        "bed": 6,
+        "bathroom": 4,
+        "type": "flat"
+    },
+    {
+        "id": 7,
+        "name": "Lovely Home",
+        "rent": 2700,
+        "image": "https://images.unsplash.com/photo-1588012886079-baef0ac45fbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80",
+        "address": "Dhaka, Bangladesh",
+        "bed": 4,
+        "bathroom": 2,
+        "type": "house"
+    },
+    {
+        "id": 8,
+        "name": "Black House",
+        "rent": 1800,
+        "image": "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "address": "Gaibandha, Bangladesh",
+        "bed": 3,
+        "bathroom": 2,
+        "type": "floor"
+    },
+    {
+        "id": 9,
+        "name": "Nice Home",
+        "rent": 3500,
+        "image": "https://images.unsplash.com/photo-1526386172983-95d2ae8a88a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80",
+        "address": "Gaibandha, Bangladesh",
+        "bed": 5,
+        "bathroom": 4,
+        "type": "floor"
+    }
+]
