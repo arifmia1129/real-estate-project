@@ -6,7 +6,7 @@ const Houses = () => {
     const [location, setLocation] = useState("");
     const [price, setPrice] = useState(0);
     const [type, setType] = useState("");
-    console.log(price)
+    const [bed, setBed] = useState(0);
     useEffect(() => {
         fetch("house.json")
             .then(res => res.json())
@@ -28,17 +28,33 @@ const Houses = () => {
                         setHouses(data.filter(d => d.rent > 3000))
                     }
                 }
+                else if (bed) {
+                    console.log(bed)
+                    if (Number(bed) === 2) {
+                        setHouses(data.filter(d => (d.bed >= 2)));
+                    }
+                    else if (Number(bed) === 4) {
+                        setHouses(data.filter(d => (d.bed >= 4)));
+                    }
+                    else if (Number(bed) === 6) {
+                        setHouses(data.filter(d => (d.bed >= 6)));
+                    }
+                }
+                else if (type) {
+                    setHouses(data.filter(d => d.type === type.toLowerCase()));
+                }
+
                 else {
                     setHouses(data)
                 }
             })
-    }, [location, price])
+    }, [location, price, type, bed])
     return (
         <div>
             {/* Search Section */}
             <div className='my-10'>
                 <h1 className='text-3xl font-bold'>Search properties to rent</h1>
-                <div className='md:grid grid-cols-2 lg:grid-cols-3 gap-10 mt-5'>
+                <div className='md:grid grid-cols-2 lg:grid-cols-4 gap-10 mt-5'>
                     <div class="card  bg-base-100 shadow-xl border">
                         <div class="card-body">
                             <h2 class="card-title">Location</h2>
@@ -64,10 +80,20 @@ const Houses = () => {
                     <div class="card  bg-base-100 shadow-xl border">
                         <div class="card-body">
                             <h2 class="card-title">Type</h2>
-                            <select class="select select-bordered w-full max-w-xs">
+                            <select onChange={e => setType(e.target.value)} class="select select-bordered w-full max-w-xs">
                                 <option>House</option>
                                 <option>Flat</option>
                                 <option>Floor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card  bg-base-100 shadow-xl border">
+                        <div class="card-body">
+                            <h2 class="card-title">Bed</h2>
+                            <select onChange={e => setBed(e.target.value)} class="select select-bordered w-full max-w-xs">
+                                <option>2</option>
+                                <option>4</option>
+                                <option>6</option>
                             </select>
                         </div>
                     </div>
